@@ -8,3 +8,5 @@ Horario: 17:30 - 19:30
 
 
 Se presenta los trabajos realizados durante las horas de clase 
+
+Y todos los comentarios de clase
