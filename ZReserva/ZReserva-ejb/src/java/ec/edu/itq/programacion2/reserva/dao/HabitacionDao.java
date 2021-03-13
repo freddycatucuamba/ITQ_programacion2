@@ -7,9 +7,11 @@ package ec.edu.itq.programacion2.reserva.dao;
 
 import ec.edu.itq.programacion2.reserva.generico.GenericoDao;
 import ec.edu.itq.programacion2.reserva.modelo.Habitacion;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 /**
  *
@@ -27,6 +29,12 @@ public class HabitacionDao extends GenericoDao<Habitacion> {
 
     public HabitacionDao() {
         super(Habitacion.class);
+    }
+
+    public List<Habitacion> buscarHabitacion() {
+        Query query = getEntityManager().createQuery("SELECT h FROM Habitacion h WHERE h.estado = true");
+        List<Habitacion> listaHabitacion = query.getResultList();
+        return listaHabitacion;
     }
     
 }

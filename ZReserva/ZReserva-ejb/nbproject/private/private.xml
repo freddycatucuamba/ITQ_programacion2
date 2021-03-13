@@ -3,10 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/fcatucuamba/Docencia/Materia/Calidad%20de%20Software/ZReserva/ZReserva-ejb/src/java/ec/edu/itq/programacion2/reserva/dao/TipoHabitacionDao.java</file>
-            <file>file:/home/fcatucuamba/Docencia/Materia/Calidad%20de%20Software/ZReserva/ZReserva-ejb/src/java/ec/edu/itq/programacion2/reserva/modelo/TipoHabitacion.java</file>
-            <file>file:/home/fcatucuamba/Docencia/Materia/Calidad%20de%20Software/ZReserva/ZReserva-ejb/src/java/ec/edu/itq/programacion2/reserva/generico/GenericoDao.java</file>
-            <file>file:/home/fcatucuamba/Docencia/Materia/Calidad%20de%20Software/ZReserva/ZReserva-ejb/src/java/ec/edu/itq/programacion2/reserva/servicio/TipoHabitacionServicio.java</file>
+            <file>file:/home/fcatucuamba/Docencia/Materia/Calidad%20de%20Software/ZReserva/ZReserva-ejb/src/java/ec/edu/itq/programacion2/reserva/servicio/HabitacionServicio.java</file>
+            <file>file:/home/fcatucuamba/Docencia/Materia/Calidad%20de%20Software/ZReserva/ZReserva-ejb/src/java/ec/edu/itq/programacion2/reserva/dao/HabitacionDao.java</file>
         </group>
     </open-files>
 </project-private>

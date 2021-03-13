@@ -123,9 +123,7 @@ public class TipoHabitacion implements Serializable {
 
     @Override
     public String toString() {
-        return "TipoHabitacion{" + "idTipoHabitacion=" + idTipoHabitacion + ", nombre=" + nombre + ", descripcion=" + descripcion + ", estado=" + estado + '}';
+        return "ec.edu.itq.programacion2.reserva.modelo.TipoHabitacion[ idTipoHabitacion=" + idTipoHabitacion + " ]";
     }
-
-    
     
 }

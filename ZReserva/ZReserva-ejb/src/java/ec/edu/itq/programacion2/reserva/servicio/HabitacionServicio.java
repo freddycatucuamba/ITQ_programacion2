@@ -5,6 +5,10 @@
  */
 package ec.edu.itq.programacion2.reserva.servicio;
 
+import ec.edu.itq.programacion2.reserva.dao.HabitacionDao;
+import ec.edu.itq.programacion2.reserva.modelo.Habitacion;
+import java.util.List;
+import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.ejb.LocalBean;
 
@@ -16,6 +20,18 @@ import javax.ejb.LocalBean;
 @LocalBean
 public class HabitacionServicio {
 
-    // Add business logic below. (Right-click in editor and choose
-    // "Insert Code > Add Business Method")
+@EJB
+private HabitacionDao habitacionDao;
+
+public void guardar(Habitacion  habitacion){
+    habitacionDao.create(habitacion);
+}
+
+    public List<Habitacion> buscarHabitacion() {
+        List<Habitacion> listaHabitacion = habitacionDao.buscarHabitacion();
+        return listaHabitacion;
+    }
+   
+
+
 }
