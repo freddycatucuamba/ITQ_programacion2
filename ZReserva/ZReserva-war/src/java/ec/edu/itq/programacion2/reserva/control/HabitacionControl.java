@@ -32,6 +32,7 @@ public class HabitacionControl {
     private List<SelectItem> selectItemTipoHabitacion;
     private Integer idTipoHabitacion;
     private Map<Integer, TipoHabitacion> mapaTipoHabitacion;
+    private TipoHabitacion tipoHabitacion;
     
     @EJB
     private TipoHabitacionServicio tipoHabitacionServicio;
@@ -47,6 +48,12 @@ public class HabitacionControl {
     
     private void buscarHabitacion(){
         listaHabitacion = habitacionServicio.buscarHabitacion();
+    }
+    
+    public void buscarTipoHabitacionPorId(){
+        
+        tipoHabitacion = tipoHabitacionServicio.buscarTipoHabitacionPorId(idTipoHabitacion.longValue());
+        System.out.println("tipo Habitación " + tipoHabitacion.getNombre());
     }
     
     private List<TipoHabitacion> buscarTipoHabitacion(){
@@ -114,6 +121,14 @@ public class HabitacionControl {
 
     public void setIdTipoHabitacion(Integer idTipoHabitacion) {
         this.idTipoHabitacion = idTipoHabitacion;
+    }
+
+    public TipoHabitacion getTipoHabitacion() {
+        return tipoHabitacion;
+    }
+
+    public void setTipoHabitacion(TipoHabitacion tipoHabitacion) {
+        this.tipoHabitacion = tipoHabitacion;
     }
     
     

@@ -28,9 +28,12 @@ public class TipoHabitacionServicio {
     }
     
     public List<TipoHabitacion> buscarTipoHabitacion(){
-        
         List<TipoHabitacion> listaTipoHabitacion = tipoHabitacionDao.buscarTipoHabitacion();
-        
         return listaTipoHabitacion;
+    }
+    
+    public TipoHabitacion buscarTipoHabitacionPorId(Long id){
+        TipoHabitacion resultado = tipoHabitacionDao.buscarTipoHabitacionPorId(id);
+        return resultado;
     }
 }

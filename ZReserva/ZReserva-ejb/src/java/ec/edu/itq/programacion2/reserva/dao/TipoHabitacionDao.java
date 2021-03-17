@@ -29,5 +29,14 @@ public class TipoHabitacionDao extends GenericoDao<TipoHabitacion> {
         List<TipoHabitacion> listaTipoHabitacion = query.getResultList();
         return listaTipoHabitacion;
     }
+    
+    public TipoHabitacion buscarTipoHabitacionPorId(Long id){
+        Query query = getEntityManager().createNativeQuery("Select * from tipo_habitacion where id_tipo_habitacion = "+ id, TipoHabitacion.class);
+        List<TipoHabitacion> resultado = query.getResultList();
+        if(resultado.size()>0){
+            return resultado.get(0);
+        }
+        return null;
+    }
 
 }
