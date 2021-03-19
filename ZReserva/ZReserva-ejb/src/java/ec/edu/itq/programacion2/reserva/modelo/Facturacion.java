@@ -10,6 +10,8 @@ import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -29,10 +31,10 @@ import javax.validation.constraints.NotNull;
 public class Facturacion implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @NotNull
     @Column(name = "id_facturacion")
-    private Integer idFacturacion;
+    private Long idFacturacion;
     @Basic(optional = false)
     @NotNull
     @Column(name = "precio")
@@ -66,11 +68,11 @@ public class Facturacion implements Serializable {
     public Facturacion() {
     }
 
-    public Facturacion(Integer idFacturacion) {
+    public Facturacion(Long idFacturacion) {
         this.idFacturacion = idFacturacion;
     }
 
-    public Facturacion(Integer idFacturacion, int precio, int subtotal, int servicio, int total, int iva) {
+    public Facturacion(Long idFacturacion, int precio, int subtotal, int servicio, int total, int iva) {
         this.idFacturacion = idFacturacion;
         this.precio = precio;
         this.subtotal = subtotal;
@@ -79,11 +81,11 @@ public class Facturacion implements Serializable {
         this.iva = iva;
     }
 
-    public Integer getIdFacturacion() {
+    public Long getIdFacturacion() {
         return idFacturacion;
     }
 
-    public void setIdFacturacion(Integer idFacturacion) {
+    public void setIdFacturacion(Long idFacturacion) {
         this.idFacturacion = idFacturacion;
     }
 

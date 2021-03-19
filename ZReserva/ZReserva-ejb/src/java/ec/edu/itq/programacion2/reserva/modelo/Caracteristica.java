@@ -11,6 +11,8 @@ import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -30,10 +32,10 @@ import javax.validation.constraints.Size;
 public class Caracteristica implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @NotNull
     @Column(name = "id_caracteristica")
-    private Integer idCaracteristica;
+    private Long idCaracteristica;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 20)
@@ -54,22 +56,22 @@ public class Caracteristica implements Serializable {
     public Caracteristica() {
     }
 
-    public Caracteristica(Integer idCaracteristica) {
+    public Caracteristica(Long idCaracteristica) {
         this.idCaracteristica = idCaracteristica;
     }
 
-    public Caracteristica(Integer idCaracteristica, String nombre, String descripcion, short cantidad) {
+    public Caracteristica(Long idCaracteristica, String nombre, String descripcion, short cantidad) {
         this.idCaracteristica = idCaracteristica;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.cantidad = cantidad;
     }
 
-    public Integer getIdCaracteristica() {
+    public Long getIdCaracteristica() {
         return idCaracteristica;
     }
 
-    public void setIdCaracteristica(Integer idCaracteristica) {
+    public void setIdCaracteristica(Long idCaracteristica) {
         this.idCaracteristica = idCaracteristica;
     }
 

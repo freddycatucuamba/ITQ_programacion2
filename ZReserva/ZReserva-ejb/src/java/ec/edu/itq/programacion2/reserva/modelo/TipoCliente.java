@@ -11,6 +11,8 @@ import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -30,10 +32,10 @@ import javax.validation.constraints.Size;
 public class TipoCliente implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @NotNull
     @Column(name = "id_tipo_cliente")
-    private Integer idTipoCliente;
+    private Long idTipoCliente;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 20)
@@ -45,20 +47,20 @@ public class TipoCliente implements Serializable {
     public TipoCliente() {
     }
 
-    public TipoCliente(Integer idTipoCliente) {
+    public TipoCliente(Long idTipoCliente) {
         this.idTipoCliente = idTipoCliente;
     }
 
-    public TipoCliente(Integer idTipoCliente, String nombre) {
+    public TipoCliente(Long idTipoCliente, String nombre) {
         this.idTipoCliente = idTipoCliente;
         this.nombre = nombre;
     }
 
-    public Integer getIdTipoCliente() {
+    public Long getIdTipoCliente() {
         return idTipoCliente;
     }
 
-    public void setIdTipoCliente(Integer idTipoCliente) {
+    public void setIdTipoCliente(Long idTipoCliente) {
         this.idTipoCliente = idTipoCliente;
     }
 

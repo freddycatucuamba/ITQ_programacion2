@@ -11,6 +11,8 @@ import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -32,10 +34,10 @@ import javax.validation.constraints.Size;
 public class Empleado implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @NotNull
     @Column(name = "id_empleado")
-    private Integer idEmpleado;
+    private Long idEmpleado;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 20)
@@ -69,11 +71,11 @@ public class Empleado implements Serializable {
     public Empleado() {
     }
 
-    public Empleado(Integer idEmpleado) {
+    public Empleado(Long idEmpleado) {
         this.idEmpleado = idEmpleado;
     }
 
-    public Empleado(Integer idEmpleado, String nombre, String apellido, String direccion, String correo, int telefono) {
+    public Empleado(Long idEmpleado, String nombre, String apellido, String direccion, String correo, int telefono) {
         this.idEmpleado = idEmpleado;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -82,11 +84,11 @@ public class Empleado implements Serializable {
         this.telefono = telefono;
     }
 
-    public Integer getIdEmpleado() {
+    public Long getIdEmpleado() {
         return idEmpleado;
     }
 
-    public void setIdEmpleado(Integer idEmpleado) {
+    public void setIdEmpleado(Long idEmpleado) {
         this.idEmpleado = idEmpleado;
     }
 

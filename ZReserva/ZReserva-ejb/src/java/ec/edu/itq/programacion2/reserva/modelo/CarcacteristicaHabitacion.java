@@ -10,13 +10,14 @@ import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
 
 /**
  *
@@ -29,10 +30,10 @@ import javax.validation.constraints.NotNull;
 public class CarcacteristicaHabitacion implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @NotNull
     @Column(name = "id_caracteristica_habitacion")
-    private Integer idCaracteristicaHabitacion;
+    private Long idCaracteristicaHabitacion;
     @JoinColumn(name = "id_caracteristica", referencedColumnName = "id_caracteristica")
     @ManyToOne(fetch = FetchType.LAZY)
     private Caracteristica idCaracteristica;
@@ -43,15 +44,15 @@ public class CarcacteristicaHabitacion implements Serializable {
     public CarcacteristicaHabitacion() {
     }
 
-    public CarcacteristicaHabitacion(Integer idCaracteristicaHabitacion) {
+    public CarcacteristicaHabitacion(Long idCaracteristicaHabitacion) {
         this.idCaracteristicaHabitacion = idCaracteristicaHabitacion;
     }
 
-    public Integer getIdCaracteristicaHabitacion() {
+    public Long getIdCaracteristicaHabitacion() {
         return idCaracteristicaHabitacion;
     }
 
-    public void setIdCaracteristicaHabitacion(Integer idCaracteristicaHabitacion) {
+    public void setIdCaracteristicaHabitacion(Long idCaracteristicaHabitacion) {
         this.idCaracteristicaHabitacion = idCaracteristicaHabitacion;
     }
 

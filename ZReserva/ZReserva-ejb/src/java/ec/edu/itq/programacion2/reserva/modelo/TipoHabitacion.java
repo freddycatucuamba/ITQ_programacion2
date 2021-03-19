@@ -28,16 +28,14 @@ import javax.validation.constraints.Size;
 @Entity
 @Table(name = "tipo_habitacion")
 @NamedQueries({
-    @NamedQuery(name = "TipoHabitacion.findAll", query = "SELECT t FROM TipoHabitacion t")}
-
-)
+    @NamedQuery(name = "TipoHabitacion.findAll", query = "SELECT t FROM TipoHabitacion t")})
 public class TipoHabitacion implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "id_tipo_habitacion")
-    private Integer idTipoHabitacion;
+    private Long idTipoHabitacion;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 20)
@@ -54,20 +52,20 @@ public class TipoHabitacion implements Serializable {
     public TipoHabitacion() {
     }
 
-    public TipoHabitacion(Integer idTipoHabitacion) {
+    public TipoHabitacion(Long idTipoHabitacion) {
         this.idTipoHabitacion = idTipoHabitacion;
     }
 
-    public TipoHabitacion(Integer idTipoHabitacion, String nombre) {
+    public TipoHabitacion(Long idTipoHabitacion, String nombre) {
         this.idTipoHabitacion = idTipoHabitacion;
         this.nombre = nombre;
     }
 
-    public Integer getIdTipoHabitacion() {
+    public Long getIdTipoHabitacion() {
         return idTipoHabitacion;
     }
 
-    public void setIdTipoHabitacion(Integer idTipoHabitacion) {
+    public void setIdTipoHabitacion(Long idTipoHabitacion) {
         this.idTipoHabitacion = idTipoHabitacion;
     }
 

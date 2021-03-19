@@ -30,8 +30,8 @@ public class HabitacionControl {
     private Habitacion habitacion;
     private List<Habitacion> listaHabitacion;
     private List<SelectItem> selectItemTipoHabitacion;
-    private Integer idTipoHabitacion;
-    private Map<Integer, TipoHabitacion> mapaTipoHabitacion;
+    private Long idTipoHabitacion;
+    private Map<Long, TipoHabitacion> mapaTipoHabitacion;
     private TipoHabitacion tipoHabitacion;
     
     @EJB
@@ -42,6 +42,7 @@ public class HabitacionControl {
     @PostConstruct
     public void init(){
         habitacion = new Habitacion();
+        habitacion.setNombre("Presidencial");
         crearSelectItemTipoHabitacion(buscarTipoHabitacion());
         buscarHabitacion();
     }
@@ -115,11 +116,11 @@ public class HabitacionControl {
         this.selectItemTipoHabitacion = selectItemTipoHabitacion;
     }
 
-    public Integer getIdTipoHabitacion() {
+    public Long getIdTipoHabitacion() {
         return idTipoHabitacion;
     }
 
-    public void setIdTipoHabitacion(Integer idTipoHabitacion) {
+    public void setIdTipoHabitacion(Long idTipoHabitacion) {
         this.idTipoHabitacion = idTipoHabitacion;
     }
 

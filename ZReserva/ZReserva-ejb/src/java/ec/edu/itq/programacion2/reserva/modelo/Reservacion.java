@@ -12,6 +12,8 @@ import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -34,10 +36,10 @@ import javax.validation.constraints.NotNull;
 public class Reservacion implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @NotNull
     @Column(name = "id_reservacion")
-    private Integer idReservacion;
+    private Long idReservacion;
     @Basic(optional = false)
     @NotNull
     @Column(name = "cantidad_personas")
@@ -72,11 +74,11 @@ public class Reservacion implements Serializable {
     public Reservacion() {
     }
 
-    public Reservacion(Integer idReservacion) {
+    public Reservacion(Long idReservacion) {
         this.idReservacion = idReservacion;
     }
 
-    public Reservacion(Integer idReservacion, short cantidadPersonas, Date fechaInicio, Date fechaFin, boolean estado, int precio) {
+    public Reservacion(Long idReservacion, short cantidadPersonas, Date fechaInicio, Date fechaFin, boolean estado, int precio) {
         this.idReservacion = idReservacion;
         this.cantidadPersonas = cantidadPersonas;
         this.fechaInicio = fechaInicio;
@@ -85,11 +87,11 @@ public class Reservacion implements Serializable {
         this.precio = precio;
     }
 
-    public Integer getIdReservacion() {
+    public Long getIdReservacion() {
         return idReservacion;
     }
 
-    public void setIdReservacion(Integer idReservacion) {
+    public void setIdReservacion(Long idReservacion) {
         this.idReservacion = idReservacion;
     }
 

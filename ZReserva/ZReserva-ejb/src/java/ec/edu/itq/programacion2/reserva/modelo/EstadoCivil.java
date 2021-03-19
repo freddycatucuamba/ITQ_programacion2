@@ -11,6 +11,8 @@ import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -30,35 +32,37 @@ import javax.validation.constraints.Size;
 public class EstadoCivil implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @NotNull
     @Column(name = "id_estado")
-    private Integer idEstado;
+    private Long idEstado;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 15)
     @Column(name = "nombre")
     private String nombre;
+    @Column(name = "estado")
+    private Boolean estado;
     @OneToMany(mappedBy = "idEstado", fetch = FetchType.LAZY)
     private List<Cliente> clienteList;
 
     public EstadoCivil() {
     }
 
-    public EstadoCivil(Integer idEstado) {
+    public EstadoCivil(Long idEstado) {
         this.idEstado = idEstado;
     }
 
-    public EstadoCivil(Integer idEstado, String nombre) {
+    public EstadoCivil(Long idEstado, String nombre) {
         this.idEstado = idEstado;
         this.nombre = nombre;
     }
 
-    public Integer getIdEstado() {
+    public Long getIdEstado() {
         return idEstado;
     }
 
-    public void setIdEstado(Integer idEstado) {
+    public void setIdEstado(Long idEstado) {
         this.idEstado = idEstado;
     }
 
@@ -76,6 +80,14 @@ public class EstadoCivil implements Serializable {
 
     public void setClienteList(List<Cliente> clienteList) {
         this.clienteList = clienteList;
+    }
+
+    public Boolean getEstado() {
+        return estado;
+    }
+
+    public void setEstado(Boolean estado) {
+        this.estado = estado;
     }
 
     @Override

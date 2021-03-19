@@ -3,8 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/home/fcatucuamba/Docencia/Materia/Calidad%20de%20Software/ZReserva/ZReserva-war/src/java/ec/edu/itq/programacion2/reserva/control/ReservacionControl.java</file>
+            <file>file:/home/fcatucuamba/Docencia/Materia/Calidad%20de%20Software/ZReserva/ZReserva-war/src/java/ec/edu/itq/programacion2/reserva/control/EstadoCivilControl.java</file>
             <file>file:/home/fcatucuamba/Docencia/Materia/Calidad%20de%20Software/ZReserva/ZReserva-war/src/java/ec/edu/itq/programacion2/reserva/control/HabitacionControl.java</file>
-            <file>file:/home/fcatucuamba/Docencia/Materia/Calidad%20de%20Software/ZReserva/ZReserva-war/web/pages/habitacion.xhtml</file>
+            <file>file:/home/fcatucuamba/Docencia/Materia/Calidad%20de%20Software/ZReserva/ZReserva-war/web/pages/estado_civil.xhtml</file>
         </group>
     </open-files>
 </project-private>

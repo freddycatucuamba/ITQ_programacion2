@@ -37,7 +37,7 @@ public class Habitacion implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "id_habitacion")
-    private Integer idHabitacion;
+    private Long idHabitacion;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 20)
@@ -64,22 +64,22 @@ public class Habitacion implements Serializable {
     public Habitacion() {
     }
 
-    public Habitacion(Integer idHabitacion) {
+    public Habitacion(Long idHabitacion) {
         this.idHabitacion = idHabitacion;
     }
 
-    public Habitacion(Integer idHabitacion, String nombre, boolean estado, short capacidad) {
+    public Habitacion(Long idHabitacion, String nombre, boolean estado, short capacidad) {
         this.idHabitacion = idHabitacion;
         this.nombre = nombre;
         this.estado = estado;
         this.capacidad = capacidad;
     }
 
-    public Integer getIdHabitacion() {
+    public Long getIdHabitacion() {
         return idHabitacion;
     }
 
-    public void setIdHabitacion(Integer idHabitacion) {
+    public void setIdHabitacion(Long idHabitacion) {
         this.idHabitacion = idHabitacion;
     }
 

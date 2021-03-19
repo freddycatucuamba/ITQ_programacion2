@@ -19,7 +19,7 @@
                         <p:commandButton value="buscar" process="@this txtIdTipoHabitacion" onsuccess="PF('dlgTipoHabitacion').show()" />
                     </h:panelGroup>
                     <p:outputLabel value="Nombre" />
-                    <p:inputText value="#{habitacionControl.habitacion.nombre}" />
+                    <p:outputLabel value="#{habitacionControl.habitacion.nombre}" />
                     <p:outputLabel value="Capacidad" />
                     <p:inputText value="#{habitacionControl.habitacion.capacidad}"/>
                     <p:outputLabel value="Estado" />

@@ -11,6 +11,8 @@ import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -30,10 +32,10 @@ import javax.validation.constraints.Size;
 public class Puesto implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @NotNull
     @Column(name = "id_puesto")
-    private Integer idPuesto;
+    private Long idPuesto;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 20)
@@ -45,20 +47,20 @@ public class Puesto implements Serializable {
     public Puesto() {
     }
 
-    public Puesto(Integer idPuesto) {
+    public Puesto(Long idPuesto) {
         this.idPuesto = idPuesto;
     }
 
-    public Puesto(Integer idPuesto, String nombre) {
+    public Puesto(Long idPuesto, String nombre) {
         this.idPuesto = idPuesto;
         this.nombre = nombre;
     }
 
-    public Integer getIdPuesto() {
+    public Long getIdPuesto() {
         return idPuesto;
     }
 
-    public void setIdPuesto(Integer idPuesto) {
+    public void setIdPuesto(Long idPuesto) {
         this.idPuesto = idPuesto;
     }
 

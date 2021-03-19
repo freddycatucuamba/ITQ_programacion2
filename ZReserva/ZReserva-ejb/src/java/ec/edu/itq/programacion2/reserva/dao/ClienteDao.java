@@ -7,9 +7,11 @@ package ec.edu.itq.programacion2.reserva.dao;
 
 import ec.edu.itq.programacion2.reserva.generico.GenericoDao;
 import ec.edu.itq.programacion2.reserva.modelo.Cliente;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 /**
  *
@@ -27,6 +29,12 @@ public class ClienteDao extends GenericoDao<Cliente> {
 
     public ClienteDao() {
         super(Cliente.class);
+    }
+
+    public List<Cliente> buscarCliente() {
+        Query query = getEntityManager().createNamedQuery("Cliente.findAll");
+        List<Cliente> resultado = query.getResultList();
+        return resultado;
     }
     
 }

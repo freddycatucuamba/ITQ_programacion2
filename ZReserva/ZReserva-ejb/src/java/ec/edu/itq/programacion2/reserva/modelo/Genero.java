@@ -10,6 +10,8 @@ import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -30,10 +32,10 @@ import javax.validation.constraints.Size;
 public class Genero implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @NotNull
     @Column(name = "id_genero")
-    private Integer idGenero;
+    private Long idGenero;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 10)
@@ -46,20 +48,20 @@ public class Genero implements Serializable {
     public Genero() {
     }
 
-    public Genero(Integer idGenero) {
+    public Genero(Long idGenero) {
         this.idGenero = idGenero;
     }
 
-    public Genero(Integer idGenero, String nombre) {
+    public Genero(Long idGenero, String nombre) {
         this.idGenero = idGenero;
         this.nombre = nombre;
     }
 
-    public Integer getIdGenero() {
+    public Long getIdGenero() {
         return idGenero;
     }
 
-    public void setIdGenero(Integer idGenero) {
+    public void setIdGenero(Long idGenero) {
         this.idGenero = idGenero;
     }
 
